@@ -9,26 +9,29 @@
             margin: 0;
             padding: 0;
             font-family: sans-serif;
-            background-color: #121212;
-            color: #d4af37;
+            background-color: #121212; /* Dark background */
+            color: #d4af37; /* Gold text */
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
         }
 
         .container {
             text-align: center;
+            width: 90%; /* Adjusts to screen width */
             max-width: 960px;
             padding: 20px;
+            display: flex; /* Use flexbox for layout */
+            flex-direction: column; /* Items stacked vertically */
+            align-items: center; /* Center items horizontally */
         }
 
         h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: #6f00ff;
+            font-size: 36px; /* Slightly smaller for responsiveness */
+            margin-bottom: 10px;
+            color: #6f00ff; /* Purple heading */
         }
 
         img {
@@ -36,19 +39,19 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px; /* Add space below the image */
         }
 
         button {
-            background-color: #6f00ff;
+            background-color: #6f00ff; /* Purple buttons */
             color: #fff;
-            padding: 15px 30px;
-            font-size: 18px;
+            padding: 10px 20px; /* Smaller padding for smaller screens */
+            font-size: 16px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
-            margin: 10px;
+            margin: 5px; /* Reduced margin */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
@@ -57,55 +60,38 @@
             transform: scale(1.05);
         }
 
-        .features {
-            margin-top: 40px;
-            padding: 20px;
+        .section { /* Style for features and how-to-play */
+            margin-top: 20px;
+            padding: 15px;
             background-color: rgba(20, 20, 20, 0.8);
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 100%; /* Occupy full width */
+            box-sizing: border-box; /* Includes padding in width calculation */
         }
 
-        .features h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
+        .section h2 {
+            font-size: 24px; /* Smaller heading size */
+            margin-bottom: 10px;
             color: #6f00ff;
         }
 
-        .feature-item {
-            margin-bottom: 15px;
+        .item { /* For feature and step items */
+            margin-bottom: 10px;
         }
 
-        .how-to-play {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: rgba(20, 20, 20, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s;
-        }
-
-        .how-to-play h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #6f00ff;
-        }
-
-        .step {
-            margin-bottom: 15px;
-        }
-
-        .container:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-        }
-
-        .container:hover .features {
-            transform: translateY(-5px);
-        }
-
-        .container:hover .how-to-play {
-            transform: translateY(-5px);
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) { /* Adjust for tablets and smaller screens */
+            h1 {
+                font-size: 28px;
+            }
+            button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+            .section h2 {
+                font-size: 20px;
+            }
         }
     </style>
 </head>
@@ -113,23 +99,26 @@
     <div class="container">
         <h1>Button Simulator Idle</h1>
         <img src="https://tr.rbxcdn.com/180DAY-a7fd62b06ebf3e36e61ae691faa9d626/768/432/Image/Webp/noFilter" alt="Game Logo">
-        <button onclick="window.location.href='https://www.roblox.com/games/your-game-id-here'">Join Game</button>
-        <button onclick="window.location.href='https://discord.gg/your-discord-link-here'">Join Discord</button>
 
-        <div class="features">
-            <h2>Features</h2>
-            <div class="feature-item">• Earn in-game currency by clicking buttons</div>
-            <div class="feature-item">• Upgrade your buttons to increase earnings</div>
-            <div class="feature-item">• Unlock new buttons and items</div>
-            <div class="feature-item">• Compete with friends and other players</div>
+        <div>
+            <button onclick="window.location.href='https://www.roblox.com/games/your-game-id-here'">Join Game</button>
+            <button onclick="window.location.href='https://discord.gg/your-discord-link-here'">Join Discord</button>
         </div>
 
-        <div class="how-to-play">
+        <div class="section">
+            <h2>Features</h2>
+            <div class="item">• Earn in-game currency by clicking buttons</div>
+            <div class="item">• Upgrade your buttons to increase earnings</div>
+            <div class="item">• Unlock new buttons and items</div>
+            <div class="item">• Compete with friends and other players</div>
+        </div>
+
+        <div class="section">
             <h2>How to Play</h2>
-            <div class="step">1. Join the game by clicking the "Join Game" button above</div>
-            <div class="step">2. Start clicking buttons to earn in-game currency</div>
-            <div class="step">3. Upgrade your buttons and unlock new items</div>
-            <div class="step">4. Compete with friends and other players to become the best</div>
+            <div class="item">1. Join the game by clicking the "Join Game" button above</div>
+            <div class="item">2. Start clicking buttons to earn in-game currency</div>
+            <div class="item">3. Upgrade your buttons and unlock new items</div>
+            <div class="item">4. Compete with friends and other players to become the best</div>
         </div>
     </div>
 </body>
