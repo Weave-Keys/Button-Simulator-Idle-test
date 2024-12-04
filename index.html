@@ -4,266 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Button Simulator Idle</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.11.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pPMyoX51tY6ZVX+Wq0wRm/U2SDRk/uIoLi+KX/f3ZPsFX/Mpis/8O51Z+IKZTD4L5Zf7TsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-5859720A69xqx51X0nN99+33o+59/61sK8O01e8y6n6WFWF0+hGq6kQvQ7s4e6P2M9yC/8a718b+r/Ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/EasePack.min.js" integrity="sha512-mK5731o251q5x5x85uJ059lB04F3y6Y/0b+93x4jR4P5iF4sH86w/j6q8xKzY2b6O+aO7/e+aF9B0QpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CSSPlugin.min.js" integrity="sha512-f44rNN0V2kF+g82349Yz89/P8u1o5m3/mE3aQpU+1o3yC852k4R2a4z1k9o71nK0jFR/4w6D+Yx30P5N8==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/PixiPlugin.min.js" integrity="sha512-0H+xkc+jW0h4s/c9Q2aLhFXl2k+V1/i5g6+7L+nH0oZ826vI5Q+gV+6/j13N95w/q650k82aL3/W+R7jQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" />
-
-
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212; 
-            overflow-x: hidden; /* Hide horizontal scrollbar */
-            color: #f0f0f0;
+            font-family: 'Roboto', sans-serif; /* Using Roboto font for a modern look */
+            background-color: #121212; /* Dark background */
+            color: #d4af37; /* Goldish text color */
+            overflow: hidden; /* Prevent scrollbars */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
-        h1, h2, h3, p, a {
-            color: #f0f0f0;
-
-        }
-
-        .btn {
-            background-image: linear-gradient(to right, #800080, #ff00ff); 
-            border: 2px solid #fff; 
-            color: #fff; 
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px #ff00ff;
-        }
-   
-
-
-    .animated-text{
-        color: #f0f0f0
-    }
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-            .section-description {
-                font-size: 1rem;
-            }
-        }
-
-
-       .neon-text {
-            font-size: 3rem;
+        .container {
             text-align: center;
-            background: linear-gradient(45deg, #800080, #ff00ff); 
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: neon-glow 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes neon-glow {
-            0% {
-                text-shadow: 0 0 10px #800080, 0 0 20px #ff00ff, 0 0 30px #800080, 0 0 40px #ff00ff;
-            }
-            100% {
-                text-shadow: 0 0 20px #800080, 0 0 40px #ff00ff, 0 0 60px #800080, 0 0 80px #ff00ff;
-            }
-        }
-
-        .glassmorphism {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            max-width: 960px;
             padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
         }
 
-        .parallax-element {
-            position: absolute;
-            background-repeat: no-repeat;
-            background-size: contain;
-            animation: parallax 15s linear infinite;
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #6f00ff; /* Purple title */
+            text-shadow: 2px 2px 4px #000; /* Add a subtle shadow */
         }
 
-        @keyframes parallax {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transitions */
         }
 
+        button {
+            background-color: #6f00ff; /* Purple buttons */
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
 
+        button:hover {
+            background-color: #872afc; /* Darker purple on hover */
+            transform: scale(1.05);
+        }
 
+        section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(20, 20, 20, 0.8); /* Semi-transparent background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
 
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #6f00ff; /* Purple headings */
+            text-shadow: 2px 2px 4px #000;
+        }
 
+        .feature-item, .step {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
 
+        /* Mouse Interaction Animations */
+        .container:hover img {
+            transform: scale(1.08);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.7); /* Purple glow on hover */
+        }
 
+        .container:hover section {
+            transform: translateY(-5px);
+        }
 
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+                padding: 10px;
+            }
+            h1 { font-size: 36px; }
+            section h2 { font-size: 24px; }
+            button { padding: 10px 20px; font-size: 16px; }
+        }
     </style>
 </head>
-<body class="bg-gradient-to-r from-purple-900 to-black">
+<body>
+    <div class="container">
+        <h1>Button Simulator Idle</h1>
+        <img src="https://tr.rbxcdn.com/180DAY-a7fd62b06ebf3e36e61ae691faa9d626/768/432/Image/Webp/noFilter" alt="Button Simulator Idle Logo">
+        <button onclick="window.open('https://www.roblox.com/games/your-game-id-here', '_blank')">Join Game</button>
+        <button onclick="window.open('https://discord.gg/your-discord-link-here', '_blank')">Join Discord</button>
 
-    <header class="py-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold"><span class="neon-text">Button Simulator Idle</span></h1>
-            <nav>
-                <ul class="flex space-x-6">
-                    <li><a href="#" class="hover:text-purple-500">Home</a></li>
-                    <li><a href="#" class="hover:text-purple-500">About</a></li>
-                    <li><a href="#" class="hover:text-purple-500">Updates</a></li>
-                    <li><a href="#" class="hover:text-purple-500">Discord</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <section>
+            <h2>Features</h2>
+            <div class="feature-item">• **Endless Progression:**  Unlock countless buttons, each with unique click values and upgrade paths.</div>
+            <div class="feature-item">• **Prestige System:**  Reset your progress to gain powerful boosts, unlocking new levels of wealth and power.</div>
+            <div class="feature-item">• **Strategic Upgrades:**  Invest wisely in upgrades to maximize your clicking efficiency and generate more coins.</div>
+            <div class="feature-item">• **Challenging Achievements:**  Complete a variety of achievements to earn special rewards and unlock hidden content.</div>
+            <div class="feature-item">• **Regular Updates:**  Enjoy frequent updates with new content, events, and features to keep the fun going!</div>
+        </section>
 
-    <section class="hero py-20">
-        <div class="container mx-auto text-center">
-            <h2 class="text-5xl font-bold mb-4">Welcome to <span class="text-purple-500">Button Simulator Idle</span></h2>
-            <p class="text-xl mb-8">The ultimate idle Button Simulator on Ronlox With endless Features</p>
-            <div class="flex flex-col space-y-4">
-
-            <a href="https://www.roblox.com/games/16181486992/Button-Simulator-Idle" target="_blank" class="btn bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l py-3 px-6 rounded-full text-xl font-bold">Join Game</a>
-            <a href="https://discord.gg/zGqW8MQ24T" target="_blank" class="btn bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l py-3 px-6 rounded-full text-xl font-bold">Join Discord</a>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <section class="features py-20" id="features">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-8">Key Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="feature-card bg-gray-800 p-6 rounded-lg glassmorphism">
-                    <i class="fas fa-rocket text-4xl text-purple-500 mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">Fast-Paced Gameplay</h3>
-                    <p>Experience thrilling gameplay and watch your progress soar.</p>
-                </div>
-                <div class="feature-card bg-gray-800 p-6 rounded-lg glassmorphism">
-                    <i class="fas fa-coins text-4xl text-purple-500 mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">Endless Rewards</h3>
-                    <p>Earn a plethora of rewards and unlock unique upgrades.</p>
-                </div>
-                <div class="feature-card bg-gray-800 p-6 rounded-lg glassmorphism">
-                    <i class="fas fa-trophy text-4xl text-purple-500 mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">Achievements & Leaderboards</h3>
-                    <p>Reach the top of the leaderboards and unlock impressive achievements.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="screenshots py-20" id="screenshots">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-8">Screenshots</h2>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="./images/screenshots/screenshot1.jpg" alt="Screenshot 1" class="rounded-lg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/screenshots/screenshot2.jpg" alt="Screenshot 2" class="rounded-lg">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/screenshots/screenshot3.jpg" alt="Screenshot 3" class="rounded-lg">
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <section class="updates py-20" id="updates">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-8">Latest Updates</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="update-card bg-gray-800 p-6 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-2">v1.2 - New Items & Features</h3>
-                    <p>Discover a wide array of exciting new Stats and improved features.</p>
-                </div>
-                <div class="update-card bg-gray-800 p-6 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-2">v1.1 - Performance Enhancements</h3>
-                    <p>Enjoy a smoother and more optimized gameplay experience.</p>
-                </div>
-                <div class="update-card bg-gray-800 p-6 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-2">v1.0 - Initial Release</h3>
-                    <p>Experience the thrill of Button Simulator Idle for the first time.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="contact py-20" id="contact">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
-            <div class="flex flex-col items-center">
-                <p class="text-xl mb-4">Have questions or feedback? Connect with us on Discord!</p>
-                <a href="https://discord.gg/zGqW8MQ24T" target="_blank" class="btn btn-primary py-3 px-6 rounded-full text-xl font-bold">Join Our Discord</a>
-            </div>
-        </div>
-    </section>
-
-
-    <footer class="py-6 text-center">
-        <p>&copy; 2023 Button Simulator Idle. All rights reserved.</p>
-    </footer>
-
-
-
-
-
-    <script>
-        // SwiperJS initialization
-        const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            },
-        });
-
-        // GSAP Animations
-        gsap.from(".hero h2", { duration: 1, opacity: 0, y: 50, ease: "power2.out" });
-        gsap.from(".hero p", { duration: 1.2, opacity: 0, y: 50, delay: 0.2, ease: "power2.out" });
-        gsap.from(".hero .btn", { duration: 1.4, opacity: 0, y: 50, delay: 0.4, ease: "power2.out" });
-
-
-        // ScrollReveal Animations
-        ScrollReveal().reveal('.feature-card, .update-card', {
-            duration: 1000,
-            distance: '50px',
-            origin: 'bottom',
-            interval: 200
-        });
-
-
-
-    </script>
+        <section>
+            <h2>How to Play</h2>
+            <div class="step">1. **Click the buttons:** Start by clicking the initial button to earn coins.</div>
+            <div class="step">2. **Upgrade your buttons:** Use your earned coins to upgrade your buttons and increase their click values.</div>
+            <div class="step">3. **Unlock new buttons:**  As you progress, you'll unlock more powerful and valuable buttons.</div>
+            <div class="step">4. **Prestige wisely:** Consider prestiging to gain permanent upgrades and reset your progress for exponential growth.</div>
+            <div class="step">5. **Achieve greatness:** Complete achievements to unlock even more rewards and conquer the leaderboards!</div>
+        </section>
+    </div>
 </body>
 </html>
