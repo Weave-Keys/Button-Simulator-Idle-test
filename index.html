@@ -8,10 +8,10 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif; /* Using Roboto font for a modern look */
-            background-color: #121212; /* Dark background */
-            color: #d4af37; /* Goldish text color */
-            overflow: hidden; /* Prevent scrollbars */
+            font-family: sans-serif;
+            background-color: #121212;
+            color: #d4af37;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -28,8 +28,7 @@
         h1 {
             font-size: 48px;
             margin-bottom: 20px;
-            color: #6f00ff; /* Purple title */
-            text-shadow: 2px 2px 4px #000; /* Add a subtle shadow */
+            color: #6f00ff;
         }
 
         img {
@@ -37,94 +36,101 @@
             height: auto;
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smoother transitions */
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         button {
-            background-color: #6f00ff; /* Purple buttons */
+            background-color: #6f00ff;
             color: #fff;
             padding: 15px 30px;
             font-size: 18px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            transition: background-color 0.3s, transform 0.3s;
             margin: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         button:hover {
-            background-color: #872afc; /* Darker purple on hover */
+            background-color: #872afc;
             transform: scale(1.05);
         }
 
-        section {
+        .features {
             margin-top: 40px;
             padding: 20px;
-            background-color: rgba(20, 20, 20, 0.8); /* Semi-transparent background */
+            background-color: rgba(20, 20, 20, 0.8);
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s;
         }
 
-        section h2 {
+        .features h2 {
             font-size: 32px;
             margin-bottom: 20px;
-            color: #6f00ff; /* Purple headings */
-            text-shadow: 2px 2px 4px #000;
+            color: #6f00ff;
         }
 
-        .feature-item, .step {
+        .feature-item {
             margin-bottom: 15px;
-            line-height: 1.6;
         }
 
-        /* Mouse Interaction Animations */
+        .how-to-play {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(20, 20, 20, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+        }
+
+        .how-to-play h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #6f00ff;
+        }
+
+        .step {
+            margin-bottom: 15px;
+        }
+
         .container:hover img {
-            transform: scale(1.08);
-            box-shadow: 0 0 30px rgba(255, 0, 255, 0.7); /* Purple glow on hover */
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
         }
 
-        .container:hover section {
+        .container:hover .features {
             transform: translateY(-5px);
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container {
-                max-width: 100%;
-                padding: 10px;
-            }
-            h1 { font-size: 36px; }
-            section h2 { font-size: 24px; }
-            button { padding: 10px 20px; font-size: 16px; }
+        .container:hover .how-to-play {
+            transform: translateY(-5px);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Button Simulator Idle</h1>
-        <img src="https://tr.rbxcdn.com/180DAY-a7fd62b06ebf3e36e61ae691faa9d626/768/432/Image/Webp/noFilter" alt="Button Simulator Idle Logo">
-        <button onclick="window.open('https://www.roblox.com/games/your-game-id-here', '_blank')">Join Game</button>
-        <button onclick="window.open('https://discord.gg/your-discord-link-here', '_blank')">Join Discord</button>
+        <img src="https://tr.rbxcdn.com/180DAY-a7fd62b06ebf3e36e61ae691faa9d626/768/432/Image/Webp/noFilter" alt="Game Logo">
+        <button onclick="window.location.href='https://www.roblox.com/games/your-game-id-here'">Join Game</button>
+        <button onclick="window.location.href='https://discord.gg/your-discord-link-here'">Join Discord</button>
 
-        <section>
+        <div class="features">
             <h2>Features</h2>
-            <div class="feature-item">• **Endless Progression:**  Unlock countless buttons, each with unique click values and upgrade paths.</div>
-            <div class="feature-item">• **Prestige System:**  Reset your progress to gain powerful boosts, unlocking new levels of wealth and power.</div>
-            <div class="feature-item">• **Strategic Upgrades:**  Invest wisely in upgrades to maximize your clicking efficiency and generate more coins.</div>
-            <div class="feature-item">• **Challenging Achievements:**  Complete a variety of achievements to earn special rewards and unlock hidden content.</div>
-            <div class="feature-item">• **Regular Updates:**  Enjoy frequent updates with new content, events, and features to keep the fun going!</div>
-        </section>
+            <div class="feature-item">• Earn in-game currency by clicking buttons</div>
+            <div class="feature-item">• Upgrade your buttons to increase earnings</div>
+            <div class="feature-item">• Unlock new buttons and items</div>
+            <div class="feature-item">• Compete with friends and other players</div>
+        </div>
 
-        <section>
+        <div class="how-to-play">
             <h2>How to Play</h2>
-            <div class="step">1. **Click the buttons:** Start by clicking the initial button to earn coins.</div>
-            <div class="step">2. **Upgrade your buttons:** Use your earned coins to upgrade your buttons and increase their click values.</div>
-            <div class="step">3. **Unlock new buttons:**  As you progress, you'll unlock more powerful and valuable buttons.</div>
-            <div class="step">4. **Prestige wisely:** Consider prestiging to gain permanent upgrades and reset your progress for exponential growth.</div>
-            <div class="step">5. **Achieve greatness:** Complete achievements to unlock even more rewards and conquer the leaderboards!</div>
-        </section>
+            <div class="step">1. Join the game by clicking the "Join Game" button above</div>
+            <div class="step">2. Start clicking buttons to earn in-game currency</div>
+            <div class="step">3. Upgrade your buttons and unlock new items</div>
+            <div class="step">4. Compete with friends and other players to become the best</div>
+        </div>
     </div>
 </body>
 </html>
